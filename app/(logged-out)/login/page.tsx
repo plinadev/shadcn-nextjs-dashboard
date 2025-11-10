@@ -19,9 +19,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/ui/password-input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PersonStandingIcon } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import z, { email } from "zod";
 
@@ -30,6 +32,7 @@ const formSchema = z.object({
   password: z.string(),
 });
 function LoginPage() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,8 +41,9 @@ function LoginPage() {
     },
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = (data: z.infer<typeof formSchema>) => {
     console.log("login validation passed");
+    router.push("/dashboard");
   };
   return (
     <>
@@ -86,7 +90,7 @@ function LoginPage() {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input
+                        <PasswordInput
                           placeholder="password"
                           type="password"
                           {...field}
@@ -104,7 +108,7 @@ function LoginPage() {
         <CardFooter className="justify-between">
           <small>Don&apos;t have an account?</small>
           <Button variant="outline" size="sm" asChild>
-            <Link href="signup">Sign Up</Link>
+            <Link href="sign-up">Sign Up</Link>
           </Button>
         </CardFooter>
       </Card>
