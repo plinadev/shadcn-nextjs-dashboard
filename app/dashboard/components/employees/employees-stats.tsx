@@ -13,7 +13,6 @@ import {
   LaptopIcon,
   PartyPopperIcon,
   UserCheck2Icon,
-  UserCheckIcon,
   UserIcon,
   UserRoundXIcon,
 } from "lucide-react";
@@ -35,8 +34,8 @@ export default function EmployeesStats() {
             <CardTitle className="text-base">Total employees</CardTitle>
           </CardHeader>
           <CardContent className="flex justify-between items-center">
-            <div className="flex gap-2">
-              <UserIcon />
+            <div className="flex gap-2 items-center">
+              <UserIcon size={35} />
               <div className="text-5xl font-bold">{totalEmployees}</div>
             </div>
             <div>
@@ -51,11 +50,11 @@ export default function EmployeesStats() {
             <CardTitle className="text-base">Employees present</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
               {employeesPresentPercentage > 75 ? (
-                <UserCheck2Icon />
+                <UserCheck2Icon size={35} />
               ) : (
-                <UserRoundXIcon />
+                <UserRoundXIcon size={40} />
               )}
               <div className="text-5xl font-bold">{employeesPresent}</div>
             </div>

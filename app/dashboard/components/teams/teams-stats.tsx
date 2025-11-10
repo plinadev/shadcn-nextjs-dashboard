@@ -72,8 +72,8 @@ export default function TeamsStats() {
             <CardTitle className="text-base">Total teams</CardTitle>
           </CardHeader>
           <CardContent className="flex justify-between items-center">
-            <div className="flex gap-2">
-              <UsersIcon />
+            <div className="flex gap-2 items-center">
+              <UsersIcon size={35} />
               <div className="text-5xl font-bold">8</div>
             </div>
             <div>

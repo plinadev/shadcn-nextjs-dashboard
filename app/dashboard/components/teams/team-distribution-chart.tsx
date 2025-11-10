@@ -21,7 +21,7 @@ export default function TeamDistributionChart() {
     },
   ];
   return (
-    <ResponsiveContainer width="100%" height={150}>
+    <ResponsiveContainer width="100%" height={170}>
       <PieChart>
         <Tooltip
           labelClassName="font-bold"
